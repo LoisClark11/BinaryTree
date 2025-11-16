@@ -17,7 +17,6 @@ namespace BinaryTree
                 Right = null;
             }
         }
-
         class BinaryTree
         {
             public Node Root;
@@ -30,7 +29,6 @@ namespace BinaryTree
                 Root.Left.Left.Left = new Node("1");
                 Root.Left.Left.Right = new Node("3");
                 Root.Left.Right = new Node("7");
-
 
                 Root.Right = new Node("40");
                 Root.Right.Left = new Node("30");
@@ -48,9 +46,7 @@ namespace BinaryTree
                 Root.Right.Right.Left.Right = new Node("48");
                 Root.Right.Right.Right = new Node("60");
                 Root.Right.Right.Right.Left = new Node("55");
-
             }
-
             public void InOrderTraversal(Node node)//left -> root -> right
             {
                 if (node == null) return;
@@ -59,7 +55,6 @@ namespace BinaryTree
                 Console.Write(node.Value + " ");
                 InOrderTraversal(node.Right);
             }
-
             public void PreOrderTraversal(Node node)//root -> left -> right
             {
                 if (node == null) return;
@@ -68,8 +63,7 @@ namespace BinaryTree
                 PreOrderTraversal(node.Left);
                 PreOrderTraversal(node.Right);
             }
-
-            public void PostOrderTraversal(Node node)//left -> root -> right
+            public void PostOrderTraversal(Node node)//left -> right -> root
             {
                 if (node == null) return;
 
@@ -78,7 +72,6 @@ namespace BinaryTree
                 Console.Write(node.Value + " ");
             }
         }
-
         static void Main(string[] args)
         {
             BinaryTree tree = new BinaryTree();
