@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BinaryTree
 {
@@ -25,12 +21,13 @@ namespace BinaryTree
         class BinaryTree
         {
             public Node Root;
-            public BinaryTree()// Public Binary Tree lang ang gagalawin Heto lang
+            public BinaryTree()
             {
                 Root = new Node("10");
 
                 Root.Left = new Node("5");
-                Root.Left.Left = new Node("1");
+                Root.Left.Left = new Node("2");
+                Root.Left.Left.Left = new Node("1");
                 Root.Left.Left.Right = new Node("3");
                 Root.Left.Right = new Node("7");
 
@@ -54,8 +51,7 @@ namespace BinaryTree
 
             }
 
-
-            public void InOrderTraversal(Node node)
+            public void InOrderTraversal(Node node)//left -> root -> right
             {
                 if (node == null) return;
 
@@ -64,7 +60,7 @@ namespace BinaryTree
                 InOrderTraversal(node.Right);
             }
 
-            public void PreOrderTraversal(Node node)
+            public void PreOrderTraversal(Node node)//root -> left -> right
             {
                 if (node == null) return;
 
@@ -73,7 +69,7 @@ namespace BinaryTree
                 PreOrderTraversal(node.Right);
             }
 
-            public void PostOrderTraversal(Node node)
+            public void PostOrderTraversal(Node node)//left -> root -> right
             {
                 if (node == null) return;
 
